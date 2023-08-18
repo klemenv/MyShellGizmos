@@ -1,0 +1,46 @@
+[user]
+        name = Vodopivec, Klemen
+        email = vodopiveck@ornl.gov
+[push]
+        default = current
+
+[log]
+        abbrev-commit = 8
+        name-only
+
+[core]
+        excludesfile = ~/.gitignore
+
+[alias]
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    l = log --graph --pretty=format:'%C(yellow)%h%Creset%C(blue)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset'
+    ll = !git l --all
+
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
